@@ -5,6 +5,7 @@
 
 * enhancements
   * Removed deprecations warning output for `Devise::Models::Authenticatable::BLACKLIST_FOR_SERIALIZATION` (@soartec-lab)
+  * Reenable Mongoid test suite across all Rails 6+ versions, to ensure we continue supporting it. Changes to dirty tracking to support Mongoid 8.0+. [#5568](https://github.com/heartcombo/devise/pull/5568)
 
 * bug fixes
   * Respect locale set by controller in failure app. Devise will carry over the current I18n.locale option when triggering authentication, and will wrap the failure app call with it. [#5567](https://github.com/heartcombo/devise/pull/5567)
@@ -26,7 +27,6 @@
   * Allow resource class scopes to override the global configuration for `sign_in_after_reset_password` behaviour. [#5429](https://github.com/heartcombo/devise/pull/5429) [@mattr](https://github.com/mattr)
   * Refactor conditional dirty tracking logic to a centralized module to simplify usage throughout the codebase. [#5575](https://github.com/heartcombo/devise/pull/5575)
   * Improve support for Devise in apps with Active Record and Mongoid ORMs loaded, so it does not incorrectly uses new Active Record dirty tracking APIs with a Mongoid Devise model. [#5576](https://github.com/heartcombo/devise/pull/5576)
-  * Reenable Mongoid test suite across all Rails 5+ versions, to ensure we continue supporting it. (Note: testing support with Mongoid up to 7.x, not 8 yet.) [#5568](https://github.com/heartcombo/devise/pull/5568)
 
 * bug fixes
   * Failure app will respond with configured `redirect_status` instead of `error_status` if the recall app returns a redirect status (300..399) [#5573](https://github.com/heartcombo/devise/pull/5573)
